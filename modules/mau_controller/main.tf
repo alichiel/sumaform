@@ -41,8 +41,8 @@ module "controller" {
     branch          = var.branch == "default" ? var.testsuite-branch[var.base_configuration["product_version"]] : var.branch
     mirror          = var.no_mirror == true ? null :  var.base_configuration["mirror"]
 
-    server            = length(var.server_configuration["hostnames"]) > 0 ? var.server_configuration["hostnames"][0] : null
-    proxy             = length(var.proxy_configuration["hostnames"]) > 0 ? var.proxy_configuration["hostnames"][0] : null
+    server            = var.server_configuration["hostname"]
+    proxy             = var.proxy_configuration["hostname"]
     minion            = length(var.minion_configuration["hostnames"]) > 0 ? var.minion_configuration["hostnames"][0] : null
     sshminion         = length(var.sshminion_configuration["hostnames"]) > 0 ? var.sshminion_configuration["hostnames"][0] : null
 
