@@ -1,0 +1,1025 @@
+variable "base_configuration" {
+  description = "use module.base.configuration, see the main.tf example file"
+}
+
+variable "name" {
+  description = "hostname, without the domain part"
+  type        = string
+}
+
+variable "cc_ptf_username" {
+  description = "username of SCC organization having PTFs available"
+  type        = string
+  default     = null
+} 
+
+variable "cc_ptf_password" {
+  description = "password of SCC organization having PTFs available"
+  type        = string
+  default     = null
+}
+
+variable "git_username" {
+  description = "username for GitHub"
+  type        = string
+}
+
+variable "git_password" {
+  description = "password for GitHub"
+  type        = string
+}
+
+variable "git_repo" {
+  description = "Git repo clone URL"
+  default     = "default"
+}
+
+variable "branch" {
+  description = "Leave default for automatic selection or specify an existing branch of spacewalk"
+  default     = "default"
+}
+
+variable "server_configuration" {
+  description = "use module.<SERVER_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+}
+
+variable "proxy_configuration" {
+  description = "use module.<PROXY_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "proxy2_configuration" {
+  description = "use module.<PROXY2_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "proxy3_configuration" {
+  description = "use module.<PROXY3_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "server2_configuration" {
+  description = "use module.<SERVER2_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "server3_configuration" {
+  description = "use module.<SERVER3_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "server4_configuration" {
+  description = "use module.<SERVER4_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostname = null
+  }
+}
+
+variable "minion_configuration" {
+  description = "use module.<MINION_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    ids       = []
+    hostnames = []
+  }
+}
+
+variable "buildhost_configuration" {
+  description = "use module.<BUILDHOST_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sshminion_configuration" {
+  description = "use module.<SSHMINION_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhlike_configuration" {
+  description = "use module.<RHLIKE_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "deblike_configuration" {
+  description = "use module.<DEBLIKE_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "pxeboot_configuration" {
+  description = "use module.<PXEBOOT_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    private_mac = null
+    private_ip = null
+    private_name = null
+    image = null
+  }
+}
+
+variable "kvmhost_configuration" {
+  description = "use module.<VIRTHOST_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "monitoringserver_configuration" {
+  description = "use module.<VIRTHOST_NAME>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles12sp5_paygo_minion_configuration" {
+  description = "use module.<SLES12SP5_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp4_byos_minion_configuration" {
+  description = "use module.<SLES15SP4_BYOS_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp5_paygo_minion_configuration" {
+  description = "use module.<SLES15SP5_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp6_paygo_minion_configuration" {
+  description = "use module.<SLES15SP6_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp7_paygo_minion_configuration" {
+  description = "use module.<SLES15SP7_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles160_paygo_minion_configuration" {
+  description = "use module.<SLES160_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap15sp5_paygo_minion_configuration" {
+  description = "use module.<SLESFORSAP15SP5_PAYGO_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles12sp5_minion_configuration" {
+  description = "use module.<SLES12SP5_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles12sp5_sshminion_configuration" {
+  description = "use module.<SLES12SP5_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp4_minion_configuration" {
+  description = "use module.<SLES15SP4_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp4_sshminion_configuration" {
+  description = "use module.<SLES15SP4_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp5_minion_configuration" {
+  description = "use module.<SLES15SP5_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp5_sshminion_configuration" {
+  description = "use module.<SLES15SP5_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp6_minion_configuration" {
+  description = "use module.<SLES15SP6_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp6_sshminion_configuration" {
+  description = "use module.<SLES15SP6_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp7_minion_configuration" {
+  description = "use module.<SLES15SP7_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp7_sshminion_configuration" {
+  description = "use module.<SLES15SP7_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles160_minion_configuration" {
+  description = "use module.<SLES160_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles160_sshminion_configuration" {
+  description = "use module.<SLES160_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap15sp5_minion_configuration" {
+  description = "use module.<SLESFORSAP15SP5_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap15sp6_minion_configuration" {
+  description = "use module.<SLESFORSAP15SP6_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap15sp7_minion_configuration" {
+  description = "use module.<SLESFORSAP15SP7_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap160_minion_configuration" {
+  description = "use module.<SLESFORSAP160_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles161_minion_configuration" {
+  description = "use module.<SLES161_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slesforsap161_minion_configuration" {
+  description = "use module.<SLESFORSAP161_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles161_sshminion_configuration" {
+  description = "use module.<SLES161_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro62_minion_configuration" {
+  description = "use module.<SLMICRO62_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro62_sshminion_configuration" {
+  description = "use module.<SLMICRO62_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro53_minion_configuration" {
+  description = "use module.<SLEMICRO53_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro53_sshminion_configuration" {
+  description = "use module.<SLEMICRO53_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro54_minion_configuration" {
+  description = "use module.<SLEMICRO54_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro54_sshminion_configuration" {
+  description = "use module.<SLEMICRO54_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro55_minion_configuration" {
+  description = "use module.<SLEMICRO55_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slemicro55_sshminion_configuration" {
+  description = "use module.<SLEMICRO55_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro60_minion_configuration" {
+  description = "use module.<SLMICRO60_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro61_minion_configuration" {
+  description = "use module.<SLMICRO61_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro60_sshminion_configuration" {
+  description = "use module.<SLMICRO60_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "slmicro61_sshminion_configuration" {
+  description = "use module.<SLMICRO61_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "centos7_minion_configuration" {
+  description = "use module.<CENTOS7_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "centos7_sshminion_configuration" {
+  description = "use module.<CENTOS7_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "liberty9_minion_configuration" {
+  description = "use module.<LIBERTY9_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "liberty9_sshminion_configuration" {
+  description = "use module.<LIBERTY9_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "liberty10_minion_configuration" {
+  description = "use module.<LIBERTY10_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "liberty10_sshminion_configuration" {
+  description = "use module.<LIBERTY10_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "openeuler2403_minion_configuration" {
+  description = "use module.<OPENEULER2403_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "openeuler2403_sshminion_configuration" {
+  description = "use module.<OPENEULER2403_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky8_minion_configuration" {
+  description = "use module.<ROCKY8_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky8_sshminion_configuration" {
+  description = "use module.<ROCKY8_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky9_minion_configuration" {
+  description = "use module.<ROCKY9_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky9_sshminion_configuration" {
+  description = "use module.<ROCKY9_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky10_minion_configuration" {
+  description = "use module.<ROCKY10_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rocky10_sshminion_configuration" {
+  description = "use module.<ROCKY10_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel7_minion_configuration" {
+  description = "use module.<RHEL7_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel7_sshminion_configuration" {
+  description = "use module.<RHEL7_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel8_minion_configuration" {
+  description = "use module.<RHEL8_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel8_sshminion_configuration" {
+  description = "use module.<RHEL8_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel9_minion_configuration" {
+  description = "use module.<RHEL9_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel9_sshminion_configuration" {
+  description = "use module.<RHEL9_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel10_minion_configuration" {
+  description = "use module.<RHEL10_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "rhel10_sshminion_configuration" {
+  description = "use module.<RHEL10_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma8_minion_configuration" {
+  description = "use module.<ALMA8_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma8_sshminion_configuration" {
+  description = "use module.<ALMA8_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma9_minion_configuration" {
+  description = "use module.<ALMA9_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma9_sshminion_configuration" {
+  description = "use module.<ALMA9_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma10_minion_configuration" {
+  description = "use module.<ALMA10_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "alma10_sshminion_configuration" {
+  description = "use module.<ALMA10_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "oracle9_minion_configuration" {
+  description = "use module.<ORACLE9_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "oracle9_sshminion_configuration" {
+  description = "use module.<ORACLE9_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "oracle10_minion_configuration" {
+  description = "use module.<ORACLE10_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "oracle10_sshminion_configuration" {
+  description = "use module.<ORACLE10_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "amazon2023_minion_configuration" {
+  description = "use module.<AMAZON2023_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "amazon2023_sshminion_configuration" {
+  description = "use module.<AMAZON2023_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2204_minion_configuration" {
+  description = "use module.<UBUNTU2204_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2204_sshminion_configuration" {
+  description = "use module.<UBUNTU2204_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2404_minion_configuration" {
+  description = "use module.<UBUNTU2404_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2404_sshminion_configuration" {
+  description = "use module.<UBUNTU2404_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2604_minion_configuration" {
+  description = "use module.<UBUNTU2604_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "ubuntu2604_sshminion_configuration" {
+  description = "use module.<UBUNTU2604_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "debian13_minion_configuration" {
+  description = "use module.<DEBIAN13_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "debian13_sshminion_configuration" {
+  description = "use module.<DEBIAN13_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "raspios13_minion_configuration" {
+  description = "use module.<RASPIOS13_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "raspios13_sshminion_configuration" {
+  description = "use module.<RASPIOS13_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp4_buildhost_configuration" {
+  description = "use module.<SLES15SP4_BUILDHOST>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp6_buildhost_configuration" {
+  description = "use module.<SLES15SP6_BUILDHOST>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp7_buildhost_configuration" {
+  description = "use module.<SLES15SP7_BUILDHOST>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp4_terminal_configuration" {
+  description = "use module.<SLES15SP4_TERMINAL>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    private_mac = null
+    private_ip = null
+    private_name = null
+    image = null
+  }
+}
+
+variable "sles15sp6_terminal_configuration" {
+  description = "use module.<SLES15SP6_TERMINAL>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    private_mac = null
+    private_ip = null
+    private_name = null
+    image = null
+  }
+}
+
+variable "sles15sp7_terminal_configuration" {
+  description = "use module.<SLES15SP7_TERMINAL>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    private_mac = null
+    private_ip = null
+    private_name = null
+    image = null
+  }
+}
+
+variable "opensuse161arm_minion_configuration" {
+  description = "use module.<OPENSUSE161ARM_MINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "opensuse161arm_sshminion_configuration" {
+  description = "use module.<OPENSUSE161ARM_SSHMINION>.configuration, see main.tf.libvirt-testsuite.example"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "opensuse161ppc_minion_configuration" {
+  description = "use module.<OPENSUSE161PPC_MINION>.configuration"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "opensuse161ppc_sshminion_configuration" {
+  description = "use module.<OPENSUSE161PPC_SSHMINION>.configuration"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp5s390_minion_configuration" {
+  description = "use module.<SLES15SP5S390_MINION>.configuration"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "sles15sp5s390_sshminion_configuration" {
+  description = "use module.<SLES15SP5S390_SSHMINION>.configuration"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "salt_migration_minion_configuration" {
+  description = "use module.<SALT_MIGRATION_MINION>.configuration"
+  default = {
+    hostnames = []
+  }
+}
+
+variable "additional_repos" {
+  description = "extra repositories in the form {label = url}, see README_ADVANCED.md"
+  default     = {}
+}
+
+variable "additional_repos_only" {
+  description = "whether to exclusively use additional repos"
+  default     = false
+}
+
+variable "additional_packages" {
+  description = "extra packages to install, see README_ADVANCED.md"
+  default     = []
+}
+
+variable "swap_file_size" {
+  description = "Swap file size in MiB, or 0 for none"
+  default     = 0
+}
+
+variable "ssh_key_path" {
+  description = "path of additional pub ssh key you want to use to access VMs, see README_ADVANCED.md"
+  default     = null
+}
+
+variable "ipv6" {
+  description = "IPv6 tuning: enable it, accept the RAs"
+  default = {
+    enable    = true
+    accept_ra = true
+  }
+}
+
+variable "git_profiles_repo" {
+  description = "URL of git repository with alternate Docker and Kiwi profiles, see README_ADVANCED.md"
+  default     = "default"
+}
+
+variable "no_auth_registry" {
+  description = "URI of container registry server, see README_ADVANCED.md"
+  default     = null
+}
+
+variable "auth_registry" {
+  description = "URI of authenticated registry, see README_ADVANCED.md"
+  default     = null
+}
+
+variable "auth_registry_username" {
+  description = "username on registry, see README_ADVANCED.md"
+  default     = null
+}
+
+variable "auth_registry_password" {
+  description = "password on registry, see README_ADVANCED.md"
+  default     = null
+}
+
+variable "server_http_proxy" {
+  description = "Hostname and port used by the server as the HTTP proxy to reach the outside network"
+  default     = null
+}
+
+variable "custom_download_endpoint" {
+  description = "URL (protocol, domain name and port) of custom download endpoint for packages"
+  default     = null
+}
+
+variable "provider_settings" {
+  description = "Map of provider-specific settings, see the backend-specific README file"
+  default     = {}
+}
+
+variable "no_mirror" {
+  description = "Ignore mirror even if base configuration has one set"
+  default     = false
+}
+
+variable "catch_timeout_message" {
+  description = "Enable the mechanism to catch the timeout message shown by a server overloaded"
+  default     = false
+}
+
+variable "prometheus_push_gateway_url" {
+  description = "URL of the Prometheus push gateway for quality intelligence metrics"
+  type        = string
+  default     = null
+}
+
+variable "beta_enabled" {
+  description = "Enable the mechanism to take into account beta channels"
+  default     = false
+}
+
+variable "is_using_paygo_server" {
+  description = "Specify to controller that server image is a paygo image"
+  default     = false
+}
+
+variable "is_using_build_image" {
+description = "Specify to controller that server image is a build image"
+default     = false
+}
+
+variable "is_using_scc_repositories" {
+  description = "Specify to controller that server and proxy are using SCC repository and not internal repositories"
+  default     = false
+}
+
+variable "server_instance_id" {
+  description = "Server instance ID"
+  default     = null
+}
+
+variable "product_version" {
+  description = "One of: 5.1-nightly, 5.1-released, 5.2-nightly, 5.2-released, head, head-staging, uyuni-master, uyuni-released"
+  type        = string
+  default     = null
+}
+
+variable "web_server_hostname" {
+  description = "FQDN of the web server or leave the default for no web server"
+  default = null
+}
+
+variable "install_kubectl_helm" {
+  description = "true to install kubectl and helm on the controller"
+  default = false
+}
+
+variable "install_uyuni_via_testsuite" {
+  description = "true to install mlm with the testsuite. This only exports UYUNI_NOT_INSTALLED to the controller."
+  default = false
+}
+
+variable "install_kubernetes_server_on_external_cluster" {
+  description = "true to install mlm in an external cluster."
+  default = false
+}
+
+variable "local_path_provisioner_default_class" {
+  description = "true to mark the local-path StorageClass as the cluster default when it is installed."
+  default     = true
+}
+
+variable "kubeconfig_path" {
+  description = "Path to a kubeconfig file on the host running Terraform; its contents will be copied to /root/.kube/config on the controller. Leave null to skip."
+  default = null
+}
+
+variable "kubernetes_server_fqdn" {
+  description = "FQDN used by the Uyuni server when installing into an external Kubernetes cluster"
+  default     = null
+}
+
+variable "kubernetes_server_helm_chart_name" {
+  description = "Name of the Uyuni server Helm chart used for external Kubernetes cluster installs"
+  default     = "server-helm"
+}
+
+variable "kubernetes_server_helm_chart_url" {
+  description = "URL of the Uyuni server Helm chart used for external Kubernetes cluster installs"
+  default     = "oci://registry.suse.de/devel/galaxy/manager/head/charts/suse/multi-linux-manager/5.2"
+}
+
+variable "kubernetes_server_container_registry" {
+  description = "Container registry used by the Uyuni server Helm values for external Kubernetes cluster installs"
+  default     = ""
+}
+
+variable "use_devel_oci" {
+  description = "true to use devel OCIs for external Kubernetes cluster installs"
+  default     = false
+}
+
+variable "deploy_coco_attestation" {
+  description = "true to set up the coco attestation container when installing into an external Kubernetes cluster"
+  default     = true
+}
+
+variable "deploy_saline" {
+  description = "true to set up the saline container when installing into an external Kubernetes cluster"
+  default     = true
+}
+
+variable "deploy_hub_api" {
+  description = "true to set up the hub API container when installing into an external Kubernetes cluster"
+  default     = true
+}
+
+variable "deploy_tftp" {
+  description = "true to enable the TFTP service in external Kubernetes cluster Helm values"
+  default     = true
+}
+
+variable "kubernetes_create_static_var_spacewalk_pv" {
+  description = "Whether to create the static var-spacewalk hostPath PersistentVolume. Leave null to enable it only with the local-path backend."
+  default     = null
+}
+
+variable "kubernetes_create_static_var_pgsql_pv" {
+  description = "Whether to create the static var-pgsql18 hostPath PersistentVolume. Leave null to enable it only with the local-path backend."
+  default     = null
+}

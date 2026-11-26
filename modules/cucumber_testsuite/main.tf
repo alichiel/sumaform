@@ -631,6 +631,49 @@ module "controller" {
   provider_settings = lookup(local.provider_settings_by_host, "controller", {})
 }
 
+module "mau_controller" {
+  source = "../mau_controller"
+  name   = lookup(local.names, "controller", "controller")
+
+  base_configuration             = module.base.configuration
+  server_configuration           = local.server_configuration
+  proxy_configuration            = local.proxy_configuration
+  minion_configuration           = contains(local.hosts, "suse_minion") ? module.suse_minion.configuration : { hostnames = [], ids = [], ipaddrs = [], macaddrs = [], private_macs = [] }
+  sshminion_configuration        = contains(local.hosts, "suse_sshminion") ? module.suse_sshminion.configuration : { hostnames = [], ids = [], ipaddrs = [], macaddrs = [], private_macs = [] }
+
+  branch                       = var.branch
+  git_username                 = var.git_username
+  git_password                 = var.git_password
+  cc_ptf_username              = var.cc_ptf_username
+  cc_ptf_password              = var.cc_ptf_password
+  git_repo                     = var.git_repo
+  git_profiles_repo            = var.git_profiles_repo
+  no_auth_registry             = var.no_auth_registry
+  auth_registry                = var.auth_registry
+  auth_registry_username       = var.auth_registry_username
+  auth_registry_password       = var.auth_registry_password
+  server_http_proxy            = var.server_http_proxy
+  custom_download_endpoint     = var.custom_download_endpoint
+  swap_file_size               = null
+  beta_enabled                 = var.beta_enabled
+  web_server_hostname          = var.web_server_hostname
+  install_kubectl_helm         = var.install_kubectl_helm
+  install_uyuni_via_testsuite  = var.install_uyuni_via_testsuite
+
+  prometheus_push_gateway_url = var.prometheus_push_gateway_url
+
+  use_devel_oci                                 = var.use_devel_oci
+  deploy_coco_attestation                       = var.deploy_coco_attestation
+  deploy_saline                                 = var.deploy_saline
+  deploy_hub_api                                = var.deploy_hub_api
+  deploy_tftp                                   = var.deploy_tftp
+
+  additional_repos  = lookup(local.additional_repos, "controller", {})
+  additional_repos_only  = lookup(local.additional_repos_only, "controller", false)
+  additional_packages = lookup(local.additional_packages, "controller", [])
+  provider_settings = lookup(local.provider_settings_by_host, "controller", {})
+}
+
 #### Example module
 ##
 ## module "example_module" {
