@@ -15,7 +15,7 @@ locals {
   product_version = var.product_version != null ? var.product_version : var.base_configuration["product_version"]
 }
 
-module "controller" {
+module "mau_controller" {
   source = "../host"
 
   base_configuration            = var.base_configuration
@@ -91,8 +91,8 @@ module "controller" {
 
 output "configuration" {
   value = {
-    id       = length(module.controller.configuration["ids"]) > 0 ? module.controller.configuration["ids"][0] : null
-    hostname = length(module.controller.configuration["hostnames"]) > 0 ? module.controller.configuration["hostnames"][0] : null
+    id       = length(module.mau_controller.configuration["ids"]) > 0 ? module.mau_controller.configuration["ids"][0] : null
+    hostname = length(module.mau_controller.configuration["hostnames"]) > 0 ? module.mau_controller.configuration["hostnames"][0] : null
     branch   = var.branch == "default" ? var.testsuite-branch[var.server_configuration["product_version"]] : var.branch
   }
 }
