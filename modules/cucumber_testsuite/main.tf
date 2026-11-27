@@ -633,7 +633,7 @@ module "controller" {
 
 module "mau_controller" {
   source = "../mau_controller"
-  name   = lookup(local.names, "controller", "controller")
+  name   = lookup(local.names, "mau_controller", "mau_controller")
 
   base_configuration             = module.base.configuration
   server_configuration           = local.server_configuration
@@ -668,10 +668,10 @@ module "mau_controller" {
   deploy_hub_api                                = var.deploy_hub_api
   deploy_tftp                                   = var.deploy_tftp
 
-  additional_repos  = lookup(local.additional_repos, "controller", {})
-  additional_repos_only  = lookup(local.additional_repos_only, "controller", false)
-  additional_packages = lookup(local.additional_packages, "controller", [])
-  provider_settings = lookup(local.provider_settings_by_host, "controller", {})
+  additional_repos  = lookup(local.additional_repos, "mau_controller", {})
+  additional_repos_only  = lookup(local.additional_repos_only, "mau_controller", false)
+  additional_packages = lookup(local.additional_packages, "mau_controller", [])
+  provider_settings = lookup(local.provider_settings_by_host, "mau_controller", {})
 }
 
 #### Example module
@@ -707,5 +707,6 @@ output "configuration" {
     kvm_host = module.kvm_host.configuration
     monitoring_server = module.monitoring_server.configuration
     controller = module.controller.configuration
+    mau_controller = module.mau_controller.configuration
   }
 }
